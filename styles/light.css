@@ -1,12 +1,96 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --decoration: #353430;
+  --title-color: #ffc2e6;
+  --title-shadow: #ff0070;
+  --accent-text-color: #353430;
+  --text-color: #353430;
+  --title-accent: #353430;
+  background-image: url(../images/cover-image-light.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  --font: 'IBM Plex Mono', monospace;
+  --small: 18px;
+  --bold: 700;
+  --regular: 400;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--decoration);
+  border-right: 1px solid var(--decoration);
+  right: 10px;
+  top: 10px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--decoration);
+  border-left: 1px solid var(--decoration);
+  left: 10px;
+  bottom: 10px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(50, 49, 45, 0.40);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--decoration);
+}
+
+.text-hadow:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+@media (width >= 767.97px) {
+  .header::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .header::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .footer::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .footer::after {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #fff1f7;
+    --accent-color: #ff8dcb;
+    --decoration: #353430;
+    --title-color: #ffc2e6;
+    --title-shadow: #ff0070;
+    --accent-text-color: #353430;
+    --text-color: #353430;
+    --title-accent: #353430; 
+  }
+
+  .page.theme_auto {
+    background-image: url(../images/cover-image-light.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }

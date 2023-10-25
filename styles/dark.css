@@ -1,12 +1,130 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --decoration: #ff0070;
+  --title-color: #db00ff;
+  --title-shadow: #ff0070;
+  --accent-text-color: #000028;
+  --text-color: #f1b2ce;
+  --title-accent: #ff0070;
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  --font: 'IBM Plex Mono', monospace;
+  --small: 18px;
+  --bold: 700;
+  --regular: 400;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-top: 1px solid var(--accent-color);
+  border-right: 1px solid var(--accent-color);
+  right: 10px;
+  top: 10px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--accent-color);
+  border-left: 1px solid var(--accent-color);
+  left: 10px;
+  bottom: 10px;
+}
+
+.theme_dark::before {
+  content: "REC";
+  position: absolute;
+  font-family: var(--font,'IBM Plex Mono', monospace);
+  font-size: var(--small, 18px);
+  font-weight: var(--regular, 400);
+  line-height: 1.33889;
+  right: 40px;
+  top: 16px;
+  color: var(--accent-color);
+}
+
+.theme_dark::after {
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.40);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  border-bottom: 1px solid var(--decoration);
+}
+
+.text-hadow:focus-visible {
+  outline: none;
+  border: 1px solid var(--text-color);
+}
+
+@media (width >= 767.97px) {
+  .header::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .header::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .footer::before {
+    right: 20px;
+    top: 20px;
+  }
+
+  .footer::after {
+    left: 20px;
+    bottom: 20px;
+  }
+
+  .theme_dark::before {
+    right: 50px;
+    top: 25px;
+  }
+
+  .theme_dark::after {
+    right: 29px;
+    top: 28px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #000028;
+    --accent-color: #ff0070;
+    --decoration: #ff0070;
+    --title-color: #db00ff;
+    --title-shadow: #ff0070;
+    --accent-text-color: #000028;
+    --text-color: #f1b2ce;
+    --title-accent: #ff0070;
+  }
+
+  .page.theme_auto {
+    background-image: url(../images/cover-image-dark.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
