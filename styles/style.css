@@ -21,7 +21,6 @@
 .header {
   block-size: 100vh;
   min-block-size: 668px;
-  min-block-size: clamp(41.75rem, 20.5191rem + 90.5852vw, 64rem);
   display: grid;
   grid-template-rows: min-content 1fr min-content 1fr;
   align-items: center;
