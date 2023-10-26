@@ -7,17 +7,12 @@
   --accent-text-color: #353430;
   --text-color: #353430;
   --title-accent: #353430;
+  --lamp: transparent;
+  --hover-color: rgba(50, 49, 45, 0.40);
   background-image: url(../images/cover-image-light.png);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  --font: 'IBM Plex Mono', monospace;
-  --small: 18px;
-  --bold: 700;
-  --regular: 400;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   inline-size: 25px;
@@ -28,7 +23,7 @@
   top: 10px;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   inline-size: 25px;
@@ -39,13 +34,28 @@
   bottom: 10px;
 }
 
+.lamp::before {
+  content: "REC";
+  color: var(--lamp);
+}
+
+.lamp::after {
+  content: "";
+  background-color: var(--lamp);
+  filter: drop-shadow(0px 0px 4px var(--lamp));
+}
+
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(50, 49, 45, 0.40);
+  outline: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
   border-bottom: 1px solid var(--decoration);
+}
+
+.text-hadow:hover {
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text-hadow:focus-visible {
@@ -54,22 +64,12 @@
 }
 
 @media (width >= 767.97px) {
-  .header::before {
+  .decorated-zone::before {
     right: 20px;
     top: 20px;
   }
 
-  .header::after {
-    left: 20px;
-    bottom: 20px;
-  }
-
-  .footer::before {
-    right: 20px;
-    top: 20px;
-  }
-
-  .footer::after {
+  .decorated-zone::after {
     left: 20px;
     bottom: 20px;
   }
@@ -84,13 +84,24 @@
     --title-shadow: #ff0070;
     --accent-text-color: #353430;
     --text-color: #353430;
-    --title-accent: #353430; 
+    --title-accent: #353430;
+    --lamp: transparent;
+    --hover-color: rgba(50, 49, 45, 0.40) 
   }
 
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
   }
+
+  .lamp::before {
+    content: "REC";
+    color: var(--lamp);
+  }
+  
+  .lamp::after {
+    content: "";
+    background-color: var(--lamp);
+    filter: drop-shadow(0px 0px 4px var(--lamp));
+  }
+  
 }

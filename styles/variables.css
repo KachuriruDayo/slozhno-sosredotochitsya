@@ -7,6 +7,9 @@
   --accent-text-color: #000028;
   --text-color: #f1b2ce;
   --title-accent: #ff0070;
+  --lamp: #ff0070;
+  --hover-color: rgba(255, 0, 112, 0.40);
+  --title-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   --font: 'IBM Plex Mono', monospace;
   --small: 18px;
   --bold: 700;

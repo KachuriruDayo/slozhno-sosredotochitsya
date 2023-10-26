@@ -7,17 +7,12 @@
   --accent-text-color: #000028;
   --text-color: #f1b2ce;
   --title-accent: #ff0070;
+  --lamp: #ff0070;
+  --hover-color: rgba(255, 0, 112, 0.40);
   background-image: url(../images/cover-image-dark.png);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  --font: 'IBM Plex Mono', monospace;
-  --small: 18px;
-  --bold: 700;
-  --regular: 400;
 }
 
-.header::before {
+.decorated-zone::before {
   content: "";
   position: absolute;
   inline-size: 25px;
@@ -28,7 +23,7 @@
   top: 10px;
 }
 
-.header::after {
+.decorated-zone::after {
   content: "";
   position: absolute;
   inline-size: 25px;
@@ -39,37 +34,42 @@
   bottom: 10px;
 }
 
-.theme_dark::before {
-  content: "REC";
+.lamp::before {
+  content: "rec";
   position: absolute;
   font-family: var(--font,'IBM Plex Mono', monospace);
+  text-transform: uppercase;
   font-size: var(--small, 18px);
   font-weight: var(--regular, 400);
   line-height: 1.33889;
-  right: 40px;
-  top: 16px;
-  color: var(--accent-color);
+  right: 37px;
+  top: 12px;
+  color: var(--lamp);
 }
 
-.theme_dark::after {
+.lamp::after {
   content: "";
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 18px;
+  top: 18px;
   inline-size: 9px;
   block-size: 9px;
   border-radius: 50%;
-  background-color: var(--accent-color);
-  filter: drop-shadow(0px 0px 4px var(--accent-color));
+  background-color: var(--lamp);
+  box-shadow: 0 0 4px 2px var(--lamp);
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgba(255, 0, 112, 0.40);
+  outline: 1px solid var(--hover-color);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
   border-bottom: 1px solid var(--decoration);
+}
+
+.text-hadow:hover {
+  border-bottom: 1px solid var(--text-color);
 }
 
 .text-hadow:focus-visible {
@@ -78,34 +78,24 @@
 }
 
 @media (width >= 767.97px) {
-  .header::before {
+  .decorated-zone::before {
     right: 20px;
     top: 20px;
   }
 
-  .header::after {
+  .decorated-zone::after {
     left: 20px;
     bottom: 20px;
   }
 
-  .footer::before {
-    right: 20px;
-    top: 20px;
-  }
-
-  .footer::after {
-    left: 20px;
-    bottom: 20px;
-  }
-
-  .theme_dark::before {
+  .lamp::before {
     right: 50px;
-    top: 25px;
+    top: 22px;
   }
 
-  .theme_dark::after {
+  .lamp::after {
     right: 29px;
-    top: 28px;
+    top: 29px;
   }
 }
 
@@ -119,12 +109,31 @@
     --accent-text-color: #000028;
     --text-color: #f1b2ce;
     --title-accent: #ff0070;
+    --lamp: #ff0070;
+    --hover-color: rgba(255, 0, 112, 0.40);
   }
 
   .page.theme_auto {
     background-image: url(../images/cover-image-dark.png);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+  }
+
+  .lamp::before {
+    content: "REC";
+    position: absolute;
+    font-family: var(--font,'IBM Plex Mono', monospace);
+    font-size: var(--small, 18px);
+    font-weight: var(--regular, 400);
+    line-height: 1.33889;
+    color: var(--lamp);
+  }
+  
+  .lamp::after {
+    content: "";
+    position: absolute;
+    inline-size: 9px;
+    block-size: 9px;
+    border-radius: 50%;
+    background-color: var(--lamp);
+    filter: drop-shadow(0px 0px 4px var(--lamp));
   }
 }
