@@ -119,9 +119,9 @@
 
 .card__list {
   display: grid;
-  row-gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  row-gap: clamp(0.375rem, -0.1021rem + 2.0356vw, 0.875rem);
   margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  margin-block-end: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
+  margin-block-end: clamp(2.1875rem, 0.6966rem + 6.3613vw, 3.75rem);
 }
 
 .card__images {
@@ -196,7 +196,7 @@
     grid-template-rows: repeat(4, minmax(min-content, max-content));
     column-gap: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
     row-gap: clamp(0.875rem, 0.3125rem + 1.1719vw, 1.0625rem);
-    margin-block-end: 55px;
+    margin-block-end: 60px;
   }
 
   .card__list-item {
@@ -259,6 +259,10 @@
     grid-auto-flow: row;
     justify-content: center;
     column-gap: 20px;
+  }
+
+  .card__list {
+    margin-block-end: 55px;
   }
 
   .title-position-column {
