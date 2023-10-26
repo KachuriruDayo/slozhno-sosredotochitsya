@@ -181,17 +181,16 @@
   
   .content__container {
     display: grid;
-    margin-block-start: clamp(3.75rem, 0rem + 7.8125vw, 5rem);
-  }
-
-  .content__container:nth-of-type(2) {
     margin-block-start: 80px;
   }
 
   .content__container:nth-of-type(3) {
-    margin-block-start: 80px;
     grid-template-columns: clamp(14.75rem, -0.0625rem + 30.8594vw, 19.6875rem) 1fr;
     column-gap: 20px;
+  }
+
+  .content__container:nth-of-type(4) {
+    margin-block-start: 60px;
   }
 
   .card__list {
