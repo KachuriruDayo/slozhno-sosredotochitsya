@@ -11,69 +11,6 @@
   background-image: url(../images/cover-image-light.png);
 }
 
-.decorated-zone::before {
-  content: "";
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
-  border-top: 1px solid var(--decoration);
-  border-right: 1px solid var(--decoration);
-  right: 10px;
-  top: 10px;
-}
-
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  inline-size: 25px;
-  block-size: 25px;
-  border-bottom: 1px solid var(--decoration);
-  border-left: 1px solid var(--decoration);
-  left: 10px;
-  bottom: 10px;
-}
-
-.lamp::before {
-  content: "REC";
-  color: var(--lamp);
-}
-
-.lamp::after {
-  content: "";
-  background-color: var(--lamp);
-  filter: drop-shadow(0px 0px 4px var(--lamp));
-}
-
-.header__theme-menu-button:hover {
-  outline: 1px solid var(--hover-color);
-}
-
-.header__theme-menu-button:focus-visible {
-  outline: none;
-  border-bottom: 1px solid var(--decoration);
-}
-
-.text-hadow:hover {
-  border-bottom: 1px solid var(--text-color);
-}
-
-.text-hadow:focus-visible {
-  outline: none;
-  border: 1px solid var(--text-color);
-}
-
-@media (width >= 767.97px) {
-  .decorated-zone::before {
-    right: 20px;
-    top: 20px;
-  }
-
-  .decorated-zone::after {
-    left: 20px;
-    bottom: 20px;
-  }
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --bg-color: #fff1f7;
@@ -90,16 +27,4 @@
   .page.theme_auto {
     background-image: url(../images/cover-image-light.png);
   }
-
-  .lamp::before {
-    content: "REC";
-    color: var(--lamp);
-  }
-  
-  .lamp::after {
-    content: "";
-    background-color: var(--lamp);
-    filter: drop-shadow(0px 0px 4px var(--lamp));
-  }
-  
 }
